@@ -4,15 +4,16 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     
-    <title>HAPPY RAMZAN FROM SAMEER</title>
-    <meta name="description" content="SAMEER KI TARAF SE AAPKO HAPPY RAMZAN">
+    <title>HAPPY RAMZAN - SAMEER</title>
+    <meta name="description" content="SAMEER KI TARAF SE AAPKO AUR AAPKI PURI FAMILY KO HAPPY RAMZAN">
     <meta property="og:title" content="HAPPY RAMZAN - SAMEER">
-    <meta property="og:description" content="CLICK KARKE DEKHEIN SAMEER NE KUCH BHEJA HAI!">
+    <meta property="og:description" content="CLICK KARKE DEKHEIN SAMEER NE KUCH BHEJA HAI! 🌙">
     <meta property="og:image" content="https://i.ibb.co/N6kDLx23/fd0b99d292c6604db61bca0b6b513c7b.jpg">
     <meta property="og:type" content="website">
+    <meta name="theme-color" content="#39FF14">
 
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Tajawal:wght@700;900&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Tajawal:wght@700;900&family=Amiri&display=swap');
 
         body {
             background-color: #050505;
@@ -28,144 +29,207 @@
             text-align: center;
         }
 
-        #topName {
-            font-size: 10vw;
-            font-weight: 900;
-            text-transform: uppercase;
-            background: linear-gradient(to right, #39FF14, #00FFD1, #FFD700, #39FF14);
-            background-size: 200% auto;
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            animation: shine 3s linear infinite;
-        }
-
-        @keyframes shine { to { background-position: 200% center; } }
-
+        /* SPINNING PHOTO STYLE */
         .profile-pic {
             width: 130px;
             height: 130px;
             border-radius: 50%;
             border: 4px solid #39FF14;
-            box-shadow: 0 0 20px #39FF14;
-            margin: 15px auto;
+            box-shadow: 0 0 25px #39FF14;
+            margin-bottom: 15px;
             object-fit: cover;
-            display: block;
+            /* Animation code here */
+            animation: rotatePhoto 8s linear infinite;
         }
 
-        .tagline { 
-            color: #FFD700; 
-            font-size: 4.5vw; 
-            margin-bottom: 15px; 
-            text-transform: uppercase;
-            letter-spacing: 1px;
+        @keyframes rotatePhoto {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
         }
 
-        #shayariDisplay {
-            font-size: 5vw;
-            color: #39FF14;
-            min-height: 140px;
+        .slider-wrapper {
             width: 90%;
-            font-weight: bold;
-            text-transform: uppercase; /* Sab kuch capital dikhega */
-        }
-
-        .line {
-            opacity: 0;
-            transform: translateY(-20px);
-            animation: fallDown 0.8s forwards;
-            margin-bottom: 10px;
-        }
-
-        @keyframes fallDown { to { opacity: 1; transform: translateY(0); } }
-
-        button {
-            background: #39FF14;
-            border: none;
-            padding: 15px 40px;
-            border-radius: 50px;
-            font-weight: bold;
-            font-size: 1.1rem;
-            cursor: pointer;
-            box-shadow: 0 0 15px #39FF14;
-            text-transform: uppercase;
-            color: #000;
-        }
-
-        #wishWindow {
-            display: none;
-            position: fixed;
-            top: 0; left: 0; width: 100%; height: 100%;
-            background: #000;
-            z-index: 9999;
-            flex-direction: column;
+            min-height: 320px;
+            display: flex;
             align-items: center;
             justify-content: center;
-            padding: 20px;
-            animation: fadeIn 0.5s;
         }
 
-        @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+        .slide {
+            display: none;
+            width: 100%;
+            animation: fadeIn 0.6s ease-in-out;
+        }
 
-        .wish-name { color: #39FF14; font-size: 13vw; text-shadow: 0 0 15px #39FF14; font-weight: 900; }
-        .wish-text { color: #fff; font-size: 6vw; margin: 5px 0; text-transform: uppercase; }
-        .wish-main { color: #FFD700; font-size: 10vw; margin-top: 20px; text-shadow: 0 0 10px #FFD700; font-weight: 900; }
+        .slide.active { display: block; }
+
+        .intro-text {
+            font-size: 7.5vw;
+            font-weight: 900;
+            text-transform: uppercase;
+            line-height: 1.2;
+        }
+
+        .highlight-name {
+            font-size: 11vw;
+            background: linear-gradient(to right, #39FF14, #FFD700);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            display: block;
+            margin-top: 10px;
+        }
+
+        .hindi-title {
+            color: #39FF14;
+            font-size: 5.5vw;
+            margin-bottom: 15px;
+            text-decoration: underline;
+            font-weight: bold;
+        }
+
+        .arabic {
+            font-family: 'Amiri', serif;
+            font-size: 6.8vw;
+            color: #FFD700;
+            direction: rtl;
+            line-height: 1.6;
+            padding: 10px;
+        }
+
+        .final-text {
+            color: #FFD700;
+            font-size: 9vw;
+            font-weight: 900;
+            text-shadow: 0 0 15px #FFD700;
+            text-transform: uppercase;
+        }
+
+        .nav-container {
+            margin-top: 25px;
+            display: flex;
+            gap: 15px;
+        }
+
+        .btn {
+            background: #222;
+            color: #39FF14;
+            border: 2px solid #39FF14;
+            padding: 10px 22px;
+            border-radius: 50px;
+            font-weight: bold;
+            cursor: pointer;
+            text-transform: uppercase;
+        }
+
+        .btn:hover {
+            background: #39FF14;
+            color: #000;
+            box-shadow: 0 0 15px #39FF14;
+        }
+
+        .footer-tag {
+            position: fixed;
+            bottom: 15px;
+            font-size: 4vw;
+            font-weight: bold;
+            color: #39FF14;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            opacity: 0.8;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: scale(0.95); }
+            to { opacity: 1; transform: scale(1); }
+        }
     </style>
 </head>
 <body>
 
-    <div id="topName">SAMEER</div>
-    
     <img src="https://i.ibb.co/N6kDLx23/fd0b99d292c6604db61bca0b6b513c7b.jpg" alt="Sameer" class="profile-pic">
-    
-    <div class="tagline">KI TARAF SE HAPPY RAMZAN</div>
 
-    <div id="shayariDisplay"></div>
+    <div class="slider-wrapper">
+        <div class="slide active">
+            <div class="intro-text">
+                SAMEER KI TARAF SE <br>
+                AAPKO AUR AAPKI <br>
+                PURI FAMILY KO <br>
+                <span class="highlight-name">RAMZAN MUBARAK</span>
+            </div>
+        </div>
 
-    <div class="footer">
-        <button onclick="openWish()">RAMZAN WISH ✨</button>
+        <div class="slide">
+            <div class="hindi-title">DUROOD-E-IBRAHIM</div>
+            <div class="arabic">اللّٰھُمَّ صَلِّ عَلٰی مُحَمَّدٍ وَّعَلٰٓی اٰلِ مُحَمَّدٍ کَمَا صَلَّیْتَ عَلٰٓی اِبْرَاھِیْمَ وَعَلٰٓی اٰلِ اِبْرَاھِیْمَ اِنَّکَ حَمِیْدٌ مَّجِیْدٌ۔اَللّٰھُمَّ بَارِکْ عَلٰی مُحَمَّدٍ وَّعَلٰٓی اٰلِ مُحَمَّدٍ کَمَا بَارَکْتَ عَلٰٓی اِبْرَاھِیْمَ وَعَلٰٓی اٰلِ اِبْرَاھِیْمَ اِنَّکَ حَمِیْدٌ مَّجِیْدٌ۔</div>
+        </div>
+
+        <div class="slide">
+            <div class="hindi-title">ROZA RAKHNE KI NIYAT</div>
+            <div class="arabic">وَبِصَوْمِ غَدٍ نَّوَيْتُ مِنْ شَهْرِ رَمَضَانَ</div>
+        </div>
+
+        <div class="slide">
+            <div class="hindi-title">IFTAR KI DUA</div>
+            <div class="arabic">اَللّٰهُمَّ اِنَّی لَکَ صُمْتُ وَبِکَ اٰمَنْتُ وَعَلَيْکَ تَوَکَّلْتُ وَعَلٰی رِزْقِکَ اَفْطَرْتُ</div>
+        </div>
+
+        <div class="slide">
+            <div class="hindi-title">DIL SE DUA</div>
+            <div style="color: #39FF14; font-size: 5vw; font-weight: bold; text-transform: uppercase;">
+                CHAND SE ROSHAN HO RAMZAN TUMHARA,<br>
+                IBADAT SE BHAR JAYE ROZA TUMHARA,<br>
+                HAR NAMAZ HO KABOOL TUMHARI,<br>
+                YE DUA HAI KHUDA SE HUMARI.
+            </div>
+        </div>
+
+        <div class="slide">
+            <div class="final-text">DUA MEIN <br> YAAD RAKHNA 🌙</div>
+        </div>
     </div>
 
-    <div id="wishWindow">
-        <img src="https://i.ibb.co/N6kDLx23/fd0b99d292c6604db61bca0b6b513c7b.jpg" class="profile-pic" style="width:150px; height:150px;">
-        <div class="wish-name">SAMEER</div>
-        <div class="wish-text">KI TARAF SE</div>
-        <div class="wish-text">AAPKO AUR AAPKI PURI FAMILY KO</div>
-        <div class="wish-main">HAPPY RAMZAN 🌙</div>
-        <button onclick="location.reload()" style="background:red; color:white; margin-top:40px; box-shadow: 0 0 10px red;">CLOSE</button>
+    <div class="nav-container">
+        <button class="btn" id="prevBtn" onclick="changeSlide(-1)" disabled>PREV</button>
+        <button class="btn" id="nextBtn" onclick="changeSlide(1)">NEXT</button>
     </div>
 
-    <audio id="music" loop>
+    <div class="footer-tag">MADE BY SAM</div>
+
+    <audio id="myAudio" loop>
         <source src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-2.mp3" type="audio/mpeg">
     </audio>
 
     <script>
-        // SHAYARI IN CAPITAL LETTERS (HINGLISH)
-        const shayariLines = [
-            "CHAND SE ROSHAN HO RAMZAN TUMHARA,",
-            "IBADAT SE BHAR JAYE ROZA TUMHARA,",
-            "HAR NAMAZ HO KABOOL TUMHARI,",
-            "YE DUA HAI KHUDA SE HUMARI."
-        ];
+        let currentSlide = 0;
+        const slides = document.querySelectorAll('.slide');
+        const prevBtn = document.getElementById('prevBtn');
+        const nextBtn = document.getElementById('nextBtn');
+        const audio = document.getElementById('myAudio');
 
-        function animateShayari() {
-            const container = document.getElementById('shayariDisplay');
-            container.innerHTML = '';
-            shayariLines.forEach((text, index) => {
-                const div = document.createElement('div');
-                div.className = 'line';
-                div.innerText = text;
-                div.style.animationDelay = (index * 1.5) + "s";
-                container.appendChild(div);
-            });
-        }
+        // Music Volume set to 20%
+        audio.volume = 0.2;
 
-        window.onload = animateShayari;
+        function changeSlide(n) {
+            audio.play().catch(() => {});
 
-        function openWish() {
-            const audio = document.getElementById('music');
-            audio.volume = 0.3; // Low Volume
-            audio.play().catch(e => console.log("Music started after click"));
-            document.getElementById('wishWindow').style.display = 'flex';
+            slides[currentSlide].classList.remove('active');
+            currentSlide += n;
+
+            prevBtn.disabled = (currentSlide === 0);
+            
+            if (currentSlide === slides.length - 1) {
+                nextBtn.innerText = "RESTART";
+            } else {
+                nextBtn.innerText = "NEXT";
+            }
+
+            if (currentSlide >= slides.length) {
+                currentSlide = 0;
+                prevBtn.disabled = true;
+                nextBtn.innerText = "NEXT";
+            }
+
+            slides[currentSlide].classList.add('active');
         }
     </script>
 </body>
