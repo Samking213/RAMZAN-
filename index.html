@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    
+    <title>HAPPY RAMZAN FROM SAMEER</title>
+    <meta name="description" content="SAMEER KI TARAF SE AAPKO HAPPY RAMZAN">
+    <meta property="og:title" content="HAPPY RAMZAN - SAMEER">
+    <meta property="og:description" content="Click karke dekhein Sameer ne aapke liye kuch bheja hai!">
+    <meta property="og:image" content="https://i.ibb.co/N6kDLx23/fd0b99d292c6604db61bca0b6b513c7b.jpg">
+    <meta property="og:type" content="website">
+
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Tajawal:wght@700;900&display=swap');
+
+        body {
+            background-color: #050505;
+            color: white;
+            font-family: 'Tajawal', sans-serif;
+            margin: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            overflow: hidden;
+            text-align: center;
+        }
+
+        #topName {
+            font-size: 10vw;
+            font-weight: 900;
+            text-transform: uppercase;
+            background: linear-gradient(to right, #39FF14, #00FFD1, #FFD700, #39FF14);
+            background-size: 200% auto;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            animation: shine 3s linear infinite;
+            margin-top: 10px;
+        }
+
+        @keyframes shine { to { background-position: 200% center; } }
+
+        .profile-pic {
+            width: 130px;
+            height: 130px;
+            border-radius: 50%;
+            border: 4px solid #39FF14;
+            box-shadow: 0 0 20px #39FF14;
+            margin: 15px auto;
+            object-fit: cover;
+            display: block;
+        }
+
+        .tagline { 
+            color: #FFD700; 
+            font-size: 4.5vw; 
+            margin-bottom: 15px; 
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        #shayariDisplay {
+            font-size: 5.5vw;
+            color: #39FF14;
+            min-height: 140px;
+            width: 90%;
+            font-weight: bold;
+        }
+
+        .line {
+            opacity: 0;
+            transform: translateY(-20px);
+            animation: fallDown 0.8s forwards;
+            margin-bottom: 8px;
+        }
+
+        @keyframes fallDown { to { opacity: 1; transform: translateY(0); } }
+
+        button {
+            background: #39FF14;
+            border: none;
+            padding: 15px 40px;
+            border-radius: 50px;
+            font-weight: bold;
+            font-size: 1.1rem;
+            cursor: pointer;
+            box-shadow: 0 0 15px #39FF14;
+            text-transform: uppercase;
+            color: #000;
+        }
+
+        #wishWindow {
+            display: none;
+            position: fixed;
+            top: 0; left: 0; width: 100%; height: 100%;
+            background: #000;
+            z-index: 9999;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+            box-sizing: border-box;
+            animation: fadeIn 0.5s;
+        }
+
+        @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+
+        .wish-name { color: #39FF14; font-size: 13vw; text-shadow: 0 0 15px #39FF14; font-weight: 900; }
+        .wish-text { color: #fff; font-size: 6vw; margin: 5px 0; text-transform: uppercase; }
+        .wish-main { color: #FFD700; font-size: 10vw; margin-top: 20px; text-shadow: 0 0 10px #FFD700; font-weight: 900; }
+    </style>
+</head>
+<body>
+
+    <div id="topName">SAMEER</div>
+    
+    <img src="https://i.ibb.co/N6kDLx23/fd0b99d292c6604db61bca0b6b513c7b.jpg" alt="Sameer" class="profile-pic">
+    
+    <div class="tagline">KI TARAF SE HAPPY RAMZAN</div>
+
+    <div id="shayariDisplay"></div>
+
+    <div class="footer">
+        <button onclick="openWish()">RAMZAN WISH ✨</button>
+    </div>
+
+    <div id="wishWindow">
+        <img src="https://i.ibb.co/N6kDLx23/fd0b99d292c6604db61bca0b6b513c7b.jpg" class="profile-pic" style="width:150px; height:150px;">
+        <div class="wish-name">SAMEER</div>
+        <div class="wish-text">KI TARAF SE</div>
+        <div class="wish-text">AAPKO AUR AAPKI PURI FAMILY KO</div>
+        <div class="wish-main">HAPPY RAMZAN 🌙</div>
+        <button onclick="location.reload()" style="background:red; color:white; margin-top:40px; box-shadow: 0 0 10px red;">CLOSE</button>
+    </div>
+
+    <audio id="music" loop>
+        <source src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-2.mp3" type="audio/mpeg">
+    </audio>
+
+    <script>
+        const shayariLines = [
+            "चांद से रोशन हो रमजान तुम्हारा,",
+            "इबादत से भर जाए रोजा तुम्हारा,",
+            "हर नमाज हो कबूल तुम्हारी,",
+            "ये दुआ है खुदा से हमारी।"
+        ];
+
+        function animateShayari() {
+            const container = document.getElementById('shayariDisplay');
+            container.innerHTML = '';
+            shayariLines.forEach((text, index) => {
+                const div = document.createElement('div');
+                div.className = 'line';
+                div.innerText = text;
+                div.style.animationDelay = (index * 1.5) + "s";
+                container.appendChild(div);
+            });
+        }
+
+        window.onload = animateShayari;
+
+        function openWish() {
+            const audio = document.getElementById('music');
+            audio.volume = 0.3; // आवाज़ 30% पर सेट की गई है
+            audio.play().catch(e => console.log("Audio Play Interrupted"));
+            document.getElementById('wishWindow').style.display = 'flex';
+        }
+    </script>
+</body>
+</html>
