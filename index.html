@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="hi">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
@@ -7,7 +7,7 @@
     <title>HAPPY RAMZAN FROM SAMEER</title>
     <meta name="description" content="SAMEER KI TARAF SE AAPKO HAPPY RAMZAN">
     <meta property="og:title" content="HAPPY RAMZAN - SAMEER">
-    <meta property="og:description" content="Click karke dekhein Sameer ne aapke liye kuch bheja hai!">
+    <meta property="og:description" content="CLICK KARKE DEKHEIN SAMEER NE KUCH BHEJA HAI!">
     <meta property="og:image" content="https://i.ibb.co/N6kDLx23/fd0b99d292c6604db61bca0b6b513c7b.jpg">
     <meta property="og:type" content="website">
 
@@ -37,7 +37,6 @@
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             animation: shine 3s linear infinite;
-            margin-top: 10px;
         }
 
         @keyframes shine { to { background-position: 200% center; } }
@@ -62,18 +61,19 @@
         }
 
         #shayariDisplay {
-            font-size: 5.5vw;
+            font-size: 5vw;
             color: #39FF14;
             min-height: 140px;
             width: 90%;
             font-weight: bold;
+            text-transform: uppercase; /* Sab kuch capital dikhega */
         }
 
         .line {
             opacity: 0;
             transform: translateY(-20px);
             animation: fallDown 0.8s forwards;
-            margin-bottom: 8px;
+            margin-bottom: 10px;
         }
 
         @keyframes fallDown { to { opacity: 1; transform: translateY(0); } }
@@ -101,7 +101,6 @@
             align-items: center;
             justify-content: center;
             padding: 20px;
-            box-sizing: border-box;
             animation: fadeIn 0.5s;
         }
 
@@ -140,11 +139,12 @@
     </audio>
 
     <script>
+        // SHAYARI IN CAPITAL LETTERS (HINGLISH)
         const shayariLines = [
-            "चांद से रोशन हो रमजान तुम्हारा,",
-            "इबादत से भर जाए रोजा तुम्हारा,",
-            "हर नमाज हो कबूल तुम्हारी,",
-            "ये दुआ है खुदा से हमारी।"
+            "CHAND SE ROSHAN HO RAMZAN TUMHARA,",
+            "IBADAT SE BHAR JAYE ROZA TUMHARA,",
+            "HAR NAMAZ HO KABOOL TUMHARI,",
+            "YE DUA HAI KHUDA SE HUMARI."
         ];
 
         function animateShayari() {
@@ -163,8 +163,8 @@
 
         function openWish() {
             const audio = document.getElementById('music');
-            audio.volume = 0.3; // आवाज़ 30% पर सेट की गई है
-            audio.play().catch(e => console.log("Audio Play Interrupted"));
+            audio.volume = 0.3; // Low Volume
+            audio.play().catch(e => console.log("Music started after click"));
             document.getElementById('wishWindow').style.display = 'flex';
         }
     </script>
